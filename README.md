@@ -23,11 +23,13 @@ Or you can try 4 billion times (2^³²) and won the game as well.
 Note: this game was abandoned. If you copy and paste something from here, please give us credits ;)
 
 ## How to play locally compiling source code
-**TODO:** not working. SASS is not compiling the scss anymore :(
-
 * Install Java 8 or higher
-* Install sass
-    * sudo apt install sass
+* Install sass using ruby installer (gem)
+    * Note: dont use Ubuntu package (*sudo apt install sass*). It will not work. Use the following commands:
+     
+        $ sudo apt install -y ruby-dev gcc automake libtool rubygems build-essential
+        
+        $ sudo gem install sass
 * Compile and run the server with:
     * ./gradlew
 * Access http://localhost:5000
