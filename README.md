@@ -8,7 +8,7 @@ However, this code can be used as example in many areas:
 * Gradle: you can find many Gradle files, ready to be used on contexts like Docker and AWS
 * Docker: a sample docker image and commands to publish a image on DockerHub
 * Jenkins: steps to configure Jenkins from scratch including a Jenkinsfile (for Jenkins Pipeline)
-* Nginx: a reverse proxy server with a small example config on nginx.conf)
+* Nginx: a reverse proxy server with a small example config on nginx.conf
 * AWS: some basic operations on AWS
 * SASS: to create custom css
 * AngularJS: as front-end js technology
@@ -21,6 +21,18 @@ In this game you have 32 yes/no decisions to take. You can think a lot and won t
 Or you can try 4 billion times (2^³²) and won the game as well.
 
 Note: this game was abandoned. If you copy and paste something from here, please give us credits ;)
+
+## How to play locally compiling source code
+**TODO:** not working. SASS is not compiling the scss anymore :(
+
+* Install Java 8 or higher
+* Install sass
+    * sudo apt install sass
+* Compile and run the server with:
+    * ./gradlew
+* Access http://localhost:5000
+
+
 
 ## How to play anywhere using docker
 * Install [Docker](https://docs.docker.com/install)

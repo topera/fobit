@@ -1,6 +1,6 @@
 import java.text.SimpleDateFormat
 
-defaultTasks 'clean', 'bootRun'
+defaultTasks 'runServer'
 description = "Fobit"
 
 jar {
