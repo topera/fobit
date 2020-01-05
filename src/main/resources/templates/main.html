@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="fobitApp" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org http://www.thymeleaf.org ">
+
+  <head>
+    <title>Fobit Game</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link th:href="@{/css/bootstrap-4.1.1/bootstrap.css?q={version}(version=${version})}" rel="stylesheet"/>
+    <link th:href="@{/icons/css/open-iconic-bootstrap.css?q={version}(version=${version})}" rel="stylesheet"/>
+    <link th:href="@{/css/main.css?q={version}(version=${version})}" rel="stylesheet"/>
+  </head>
+
+  <body ng-cloak ng-controller="FobitController as fc" ng-init="fc.init()" ng-keypress="fc.keyPress($event)">
+
+    <div th:insert="screen-loading" id="screen-loading" class="screen text-center" ng-class="fc.loading ? 'show' : 'hide' "></div>
+    <div th:insert="screen-welcome" id="screen-welcome" class="screen text-center" ng-class="!fc.loading && fc.screen == 'welcome' ? 'show' : 'hide' "></div>
+    <div th:insert="screen-game" id="screen-game" class="screen p-2" ng-class="!fc.loading && fc.screen == 'game' ? 'show' : 'hide' "></div>
+
+    <script th:src="@{/js/libs/angular.min.js?q={version}(version=${version})}"></script>
+    <script th:src="@{/js/fobit/Util.js?q={version}(version=${version})}"></script>
+    <script th:src="@{/js/fobit/DB.js?q={version}(version=${version})}"></script>
+    <script th:src="@{/js/fobit/fobitApp.js?q={version}(version=${version})}"></script>
+
+  </body>
+
+</html>

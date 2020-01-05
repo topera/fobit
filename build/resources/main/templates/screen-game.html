@@ -1,0 +1,240 @@
+<main class="container">
+
+  <div class="row">
+
+    <div class="col-md-2">
+    </div>
+
+    <div class="col-xs-12 col-md-10">
+
+      <header class="mb-3 container-fluid">
+        <div class="row">
+          <button type="button" class="     game-button angel lights h3 oi oi-home" ng-click="fc.changeScreen('welcome')"></button>
+          <button type="button" class="ml-3 game-button angel lights h3 oi oi-play-circle" ng-click="fc.fight()" ng-show="fc.fighting"></button>
+          <button type="button" class="ml-3 game-button angel lights h3 oi oi-grid-two-up" ng-click="fc.showCards()" ng-show="!fc.fighting"></button>
+
+          <button type="button" class="ml-3 game-button angel lights h3 oi oi-trash" ng-click="fc.reset()">
+          </button>
+
+        </div>
+      </header>
+
+      <div class="container">
+
+        <section class="row d-flex flex-wrap" id="card-deck" ng-show="fc.fighting && !fc.zooming" ng-class="fc.fighting && !fc.zooming ? 'show' : 'hide' ">
+          <div ng-repeat="card in fc.cards" ng-class="fc.cardDenied(card) ? 'card-disabled' : ''">
+              <div class="card-container" ng-click="fc.cardDenied(card) ? false : fc.zoomOn(card)" ng-class="fc.choices[card.id] ? 'selected' : ''">
+              <div class="card-background">
+                <div class="card-frame">
+                  <div class="frame-art card-image-{{card.id}}"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="row justify-content-center" id="card-zoom" ng-show="fc.fighting && fc.zooming" ng-class="fc.fighting && fc.zooming ? 'showZoom' : 'hideZoom' ">
+          <div class="card-container">
+            <div class="card-background">
+              <div class="card-frame">
+                <div class="frame-header">
+                  <h1 class="name">{{fc.zoomCard.shortName}} - {{fc.zoomCard.name}}</h1>
+                </div>
+                <div class="frame-art">
+                  <div class="icon card-image-{{fc.zoomCard.id}}"></div>
+                </div>
+                <div class="frame-text-box">
+                  <p class="description ftb-inner-margin">{{fc.zoomCard.desc}}</p>
+                  <ul class="description">
+                    <li>
+                      Good: {{fc.zoomCard.goodDesc}}
+                    </li>
+                    <li>
+                      Bad: {{fc.zoomCard.badDesc}}
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="button-bar">
+                  <button type="button" class="game-button angel lights h1 oi oi-circle-x" ng-click="fc.zoomOff()"></button>
+                  <button type="button" class="game-button angel lights h1 oi" ng-class="fc.choices[fc.zoomCard.id] ? 'oi-minus' : 'oi-check'" ng-click="fc.selectCard(fc.zoomCard)"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="row" ng-class="!fc.fighting ? 'show' : 'hide' ">
+
+          <div class="mb-4 text-light">
+            <small class="float-left w-100">
+              Score: {{fc.score}} points using combination {{fc.hexaValue}}.
+            </small>
+            <big ng-show="fc.score < 0" class="float-left">
+              You lose!
+              <a ng-click="fc.showCards()" href="#">Click here to try another card combination</a>
+            </big>
+            <big ng-show="fc.score >= 0" class="float-left">
+              You won!
+              <a ng-show="fc.level < 10" ng-click="fc.levelAdvance()" href="#">Click here to go to level {{fc.level}} and check your new cards!</a>
+              <big ng-show="fc.level >= 10" class="float-left">
+                Congratulations! You end the game reaching the level 10!
+              </big>
+            </big>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-1"></div>
+              <div class="col-lg-12 col-xl-10">
+
+                <ul class="nav nav-tabs">
+                  <li class="nav-item" ng-click="fc.tab = 'report'">
+                    <a class="nav-link" ng-class="fc.tab == 'report' ? 'active' : ''" href="#">Report</a>
+                  </li>
+                  <li class="nav-item" ng-click="fc.tab = 'scores'">
+                    <a class="nav-link" ng-class="fc.tab == 'scores' ? 'active' : ''" href="#">Scores</a>
+                  </li>
+                </ul>
+
+                <table ng-show="fc.tab == 'report'" id="report-table" class="table table-dark table-striped table-hover table-sm table-bordered shadow" style="font-size: 0.6em">
+                  <thead class="thead-light">
+                  <tr>
+                    <th scope="col" colspan="2">Game level: {{ fc.level }}/10</th>
+                    <th scope="col" colspan="5" class="text-center">User</th>
+                    <th scope="col" colspan="5" class="text-center">Enemy</th>
+                  </tr>
+                  <tr>
+                    <th scope="col" class="text-center">Round</th>
+                    <th scope="col" class="text-center">Status</th>
+
+                    <th scope="col" class="text-center">Life</th>
+                    <th scope="col" class="text-center">$</th>
+                    <th scope="col" class="text-center">Items</th>
+                    <th scope="col" class="text-center mytooltip">
+                      AR
+                      <div class="ml-3 mt-1 tooltip bs-tooltip-bottom">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner">
+                          Armor
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="col" class="text-center mytooltip">
+                      ST
+                      <div class="ml-3 mt-1 tooltip bs-tooltip-bottom">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner">
+                          Strength
+                        </div>
+                      </div>
+                    </th>
+
+                    <th scope="col" class="text-center">Life</th>
+                    <th scope="col" class="text-center">$</th>
+                    <th scope="col" class="text-center">Items</th>
+                    <th scope="col" class="text-center mytooltip">
+                      AR
+                      <div class="ml-3 mt-1 tooltip bs-tooltip-bottom">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner">
+                          Armor
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="col" class="text-center mytooltip">
+                      ST
+                      <div class="ml-3 mt-1 tooltip bs-tooltip-bottom">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner">
+                          Strength
+                        </div>
+                      </div>
+                    </th>
+
+                  </tr>
+                  </thead>
+                  <tr ng-repeat="log in fc.report.roundLogs">
+                    <td class="text-center"> #{{($index)}}</td>
+                    <td class="text-center oi w-100" ng-class="fc.getRoundStatusClass($index, log)">
+                      {{ fc.getRoundStatus($index, log) }}
+                    </td>
+                    <td class="mytooltip">
+                      <div class="ml-3 mt-1 tooltip bs-tooltip-bottom">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner">
+                          {{log.humanPlayer.currentLife}}
+                        </div>
+                      </div>
+                      <span class="bar">
+                        <span class="inner" style="width: {{ 100*(log.humanPlayer.currentLife/log.humanPlayer.maxLife) | number:0 }}%;"></span>
+                      </span>
+                    </td>
+                    <td class="text-right">
+                      ${{log.humanPlayer.money}}
+                    </td>
+                    <td class="text-center">
+                      <div ng-repeat="item in log.humanPlayer.items">
+                        {{item.shortCode}}
+                      </div>
+                    </td>
+                    <td class="text-center"> {{ 100*(log.humanPlayer.armor) | number:0 }}</td>
+                    <td class="text-center"> {{log.humanPlayer.strength}}</td>
+                    <td class="mytooltip">
+                      <div class="ml-3 mt-1 tooltip bs-tooltip-bottom">
+                        <div class="arrow"></div>
+                        <div class="tooltip-inner">
+                          {{log.computerPlayer.currentLife}}
+                        </div>
+                      </div>
+                      <span class="bar">
+                          <span class="inner" style="width: {{ 100*(log.computerPlayer.currentLife/log.computerPlayer.maxLife) | number:0 }}%;"></span>
+                      </span>
+                    </td>
+                    <td class="text-right">
+                      ${{log.computerPlayer.money}}
+                    </td>
+                    <td class="text-center">
+                      <div ng-repeat="item in log.computerPlayer.items">
+                        <p ng-show="fc.level >= 10">
+                          {{item.shortCode}}
+                        </p>
+                        <p ng-show="fc.level < 10">
+                          {{item.shortCode}}
+                        </p>
+                      </div>
+                    </td>
+                    <td class="text-center"> {{ 100*(log.computerPlayer.armor) | number:0 }}</td>
+                    <td class="text-center"> {{log.computerPlayer.strength}}</td>
+                  </tr>
+                </table>
+
+                <table ng-show="fc.tab == 'scores'" class="table table-dark table-striped table-hover table-sm table-bordered shadow" style="font-size: 0.6em">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col" class="text-center">Scores for level {{fc.level}}</th>
+                      <th scope="col" class="text-center">Option</th>
+                    </tr>
+                  </thead>
+                  <tr ng-repeat="score in fc.scores">
+                    <td class="text-center">{{score.score}}</td>
+                    <td class="text-center">
+                      <a ng-click="fc.replay(score.combination)" href="#">Replay with combination {{score.combination}}</a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-xl-1"></div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+    </div>
+
+  </div>
+
+</main>

@@ -1,0 +1,17 @@
+<form ng-submit="fc.changeScreen('game')" xmlns:th="http://www.thymeleaf.org">
+  <img class="mb-4" src="../images/logo.png" alt="fobit game logo">
+  <button class="btn btn-lg btn-block game-button angel" type="submit" ng-click="fc.restart()">New Game</button>
+  <button class="btn btn-lg btn-block game-button angel" type="submit">Continue Game</button>
+  <a href="http://www.terahorse.com" class="text-light" target="terahorse">
+    <p class="mt-5 mb-3">Powered by TeraHorse &copy; 2018</p>
+  </a>
+  <p>
+    <a href="https://github.com/terahorse/fobit/blob/master/CHANGELOG.md" class="text-light" target="github">
+      <small>Version: <small th:text="${build}"></small></small>
+    </a>
+    -
+    <a href="https://hub.docker.com/r/terahorse/fobit/tags/" class="text-light" target="dockerhub">
+      <small>Docker Hub</small>
+    </a>
+  </p>
+</form>

@@ -1,0 +1,282 @@
+import com.terahorse.fobit.model.Game
+import com.terahorse.fobit.model.Player
+import com.terahorse.fobit.model.Card
+import com.terahorse.fobit.model.items.*
+import java.util.List;
+import java.util.ArrayList;
+
+rule "maxLife: min value"
+    dialect "mvel"
+    agenda-group "CARDS"
+when
+    $p: Player(maxLife < com.terahorse.fobit.Constants.INITIAL_MAX_LIFE)
+then
+    modify($p){
+        maxLife = com.terahorse.fobit.Constants.INITIAL_MAX_LIFE
+    }
+end
+
+rule "maxLife: max value"
+    dialect "mvel"
+    agenda-group "CARDS"
+when
+    $p: Player(maxLife > com.terahorse.fobit.Constants.FINAL_MAX_LIFE)
+then
+    modify($p){
+        maxLife = com.terahorse.fobit.Constants.FINAL_MAX_LIFE
+    }
+end
+
+rule "speed: max value"
+    dialect "mvel"
+    agenda-group "CARDS"
+when
+    $p: Player(speed > com.terahorse.fobit.Constants.MAX_SPEED)
+then
+    modify($p){
+        speed = com.terahorse.fobit.Constants.MAX_SPEED
+    }
+end
+
+rule "card 1-bad side"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.COIN.CARD_NUMBER, player.missingItem(ItemEnum.COIN))
+  Game(currentRound == 1)
+then
+  $c.player.buyResource(ItemEnum.COIN, true)
+  update($c.player)
+end
+
+rule "card 1-good side"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $p: Player(hasItem(ItemEnum.COIN))
+then
+  $p.receiveMoney(ItemEnum.COIN)
+  update($p)
+end
+
+rule "card 2-bad side"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.FARM.CARD_NUMBER, player.money >= ItemEnum.FARM.COST, player.missingItem(ItemEnum.FARM))
+then
+  $c.player.buyResource(ItemEnum.FARM)
+  update($c.player)
+end
+
+rule "card 2-good side"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $p: Player(hasItem(ItemEnum.FARM))
+then
+  $p.receiveMoney(ItemEnum.FARM)
+  update($p)
+end
+
+rule "card 3-bad side"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.MEAT.CARD_NUMBER, player.money >= ItemEnum.MEAT.COST, player.missingItem(ItemEnum.MEAT))
+then
+  $c.player.buyResource(ItemEnum.MEAT)
+  update($c.player)
+end
+
+rule "card 3-good side"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $p: Player(hasItem(ItemEnum.MEAT))
+then
+  $p.receiveMoney(ItemEnum.MEAT)
+  update($p)
+end
+
+rule "card 4-bad side"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.MINE.CARD_NUMBER, player.money >= ItemEnum.MINE.COST, player.missingItem(ItemEnum.MINE))
+then
+  $c.player.buyResource(ItemEnum.MINE)
+  update($c.player)
+end
+
+rule "card 4-good side"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $p: Player(hasItem(ItemEnum.MINE))
+then
+  $p.receiveMoney(ItemEnum.MINE)
+  update($p)
+end
+
+rule "card 18"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.SHOES.CARD_NUMBER, player.money >= ItemEnum.SHOES.COST, player.missingItem(ItemEnum.SHOES))
+then
+  $c.player.buyArmor(ItemEnum.SHOES)
+  update($c.player)
+end
+
+rule "card 7"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.BELT.CARD_NUMBER, player.money >= ItemEnum.BELT.COST, player.missingItem(ItemEnum.BELT))
+then
+  $c.player.buyArmor(ItemEnum.BELT)
+  update($c.player)
+end
+
+rule "card 15"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.GLOVES.CARD_NUMBER, player.money >= ItemEnum.GLOVES.COST, player.missingItem(ItemEnum.GLOVES))
+then
+  $c.player.buyArmor(ItemEnum.GLOVES)
+  update($c.player)
+end
+
+rule "card 17"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.PANTS.CARD_NUMBER, player.money >= ItemEnum.PANTS.COST, player.missingItem(ItemEnum.PANTS))
+then
+  $c.player.buyArmor(ItemEnum.PANTS)
+  update($c.player)
+end
+
+rule "card 24"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.SHOULDERS.CARD_NUMBER, player.money >= ItemEnum.SHOULDERS.COST, player.missingItem(ItemEnum.SHOULDERS))
+then
+  $c.player.buyArmor(ItemEnum.SHOULDERS)
+  update($c.player)
+end
+
+rule "card 12"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.BRACERS.CARD_NUMBER, player.money >= ItemEnum.BRACERS.COST, player.missingItem(ItemEnum.BRACERS))
+then
+  $c.player.buyArmor(ItemEnum.BRACERS)
+  update($c.player)
+end
+
+rule "card 16"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.HELMET.CARD_NUMBER, player.money >= ItemEnum.HELMET.COST, player.missingItem(ItemEnum.HELMET))
+then
+  $c.player.buyArmor(ItemEnum.HELMET)
+  update($c.player)
+end
+
+rule "card 29"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.HSHIELD.CARD_NUMBER, player.money >= ItemEnum.HSHIELD.COST, player.missingItem(ItemEnum.HSHIELD))
+then
+  $c.player.buyArmor(ItemEnum.HSHIELD)
+  update($c.player)
+end
+
+rule "card 5"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.ARMOR.CARD_NUMBER, player.money >= ItemEnum.ARMOR.COST, player.missingItem(ItemEnum.ARMOR))
+then
+  $c.player.buyArmor(ItemEnum.ARMOR)
+  update($c.player)
+end
+
+rule "card 13"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.CLOAK.CARD_NUMBER, player.money >= ItemEnum.CLOAK.COST, player.missingItem(ItemEnum.CLOAK))
+then
+  $c.player.buyArmor(ItemEnum.CLOAK)
+  update($c.player)
+end
+
+rule "card 27"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.PSHIELD.CARD_NUMBER, player.money >= ItemEnum.PSHIELD.COST, player.missingItem(ItemEnum.PSHIELD))
+then
+  $c.player.buyArmor(ItemEnum.PSHIELD)
+  update($c.player)
+end
+
+rule "card 9"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.AXE.CARD_NUMBER, player.money >= ItemEnum.AXE.COST, player.missingItem(ItemEnum.AXE))
+then
+  $c.player.buyWeapon(ItemEnum.AXE)
+  update($c.player)
+end
+
+rule "card 10"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.SWORD.CARD_NUMBER, player.money >= ItemEnum.SWORD.COST, player.missingItem(ItemEnum.SWORD))
+then
+  $c.player.buyWeapon(ItemEnum.SWORD)
+  update($c.player)
+end
+
+rule "card 26"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.ROCKS.CARD_NUMBER, player.money >= ItemEnum.ROCKS.COST, player.missingItem(ItemEnum.ROCKS))
+then
+  $c.player.buyWeapon(ItemEnum.ROCKS)
+  update($c.player)
+end
+
+rule "card 28"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.THUNDER.CARD_NUMBER, player.money >= ItemEnum.THUNDER.COST, player.missingItem(ItemEnum.THUNDER))
+then
+  $c.player.buyWeapon(ItemEnum.THUNDER)
+  update($c.player)
+end
+
+rule "card 25"
+  dialect "mvel"
+  agenda-group "CARDS"
+when
+  $c: Card(id == ItemEnum.FIRE.CARD_NUMBER, player.money >= ItemEnum.FIRE.COST, player.missingItem(ItemEnum.FIRE))
+then
+  $c.player.buyWeapon(ItemEnum.FIRE)
+  update($c.player)
+end
+
+

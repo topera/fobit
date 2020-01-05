@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.terahorse.fobit.service.GameServiceSpec" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-01-05T19:15:49" hostname="g5" time="0.271">
+  <properties/>
+  <testcase name="Run empty game" classname="com.terahorse.fobit.service.GameServiceSpec" time="0.192"/>
+  <testcase name="Run game with 3 players - checking attack inversion" classname="com.terahorse.fobit.service.GameServiceSpec" time="0.035"/>
+  <testcase name="Run game with 2 players" classname="com.terahorse.fobit.service.GameServiceSpec" time="0.043"/>
+  <testcase name="Create computer and human player" classname="com.terahorse.fobit.service.GameServiceSpec" time="0.001"/>
+  <system-out><![CDATA[[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: max value 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentLife: min value 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: player defeats another 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentRound: increase round 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: remainingAttacks: reload 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: SETUP
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: CARDS
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: attack 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: currentLife: min value 
+[16:15:49 - INFO ] ┃ ⬥ RHS fired: core: player defeats another 
+[16:15:49 - INFO ] ┃ ⬒ AGENDA FINISHED: BATTLE
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

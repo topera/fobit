@@ -1,0 +1,26 @@
+import java.text.SimpleDateFormat
+
+defaultTasks 'clean', 'bootRun'
+description = "Fobit"
+
+jar {
+    baseName = 'fobit'
+}
+
+def getCurrentDate(){
+    def sdf = new SimpleDateFormat("yyMMdd.HHmmss")
+    sdf.setTimeZone(TimeZone.getTimeZone("America/Sao_Paulo"))
+    sdf.format(new Date())
+}
+
+ext {
+    buildNumber = appVersion + "-" + getCurrentDate()
+    jarLocal = "fobit-docker.jar"
+    awsRegionName = "us-east-1"
+    awsAppName = "fobit"
+    awsEnvName = "PROD"
+    awsJar = "fobit-${buildNumber}.jar"
+    awsBucketName = "elasticbeanstalk-us-east-1-727193322906"
+}
+
+version = appVersion

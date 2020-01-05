@@ -1,0 +1,48 @@
+import com.terahorse.gradle.SimpleExec
+
+def groupDev = 'fobit-dev'
+def groupOps = 'fobit-ops'
+
+task runDeleteImage(group: groupOps) {
+    description 'Stops container and deletes the image'
+}
+
+task runDeployFobit(group: groupOps) {
+    description 'Deploy Fobit on AWS using Docker Hub'
+}
+
+task runAddTag(group: groupOps) {
+    description 'Add tag on git'
+}
+
+task runPublishImage(group: groupOps) {
+    description 'Compile SpringBoot source-code'
+}
+
+task runContainer(group: groupOps) {
+    description 'Run server using Docker'
+}
+
+task runCreateImage(group: groupOps) {
+    description 'Creates a docker image'
+}
+
+task runClean(type: SimpleExec, group: groupDev) {
+    description 'Runs clean'
+    doFirst {
+        run 'find src/main/resources/static/css -name *.css -delete || true'
+        run 'find src/main/resources/static -name *.map -delete || true'
+    }
+}
+
+task runCompile(group: groupDev) {
+    description 'Compile SpringBoot source-code'
+}
+
+task runServer(group: groupDev) {
+    description 'Start local server, using only SpringBoot'
+}
+
+task runTests(group: groupDev) {
+    description 'Run all tests (unit and integration)'
+}

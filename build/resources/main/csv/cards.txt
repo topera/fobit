@@ -1,0 +1,21 @@
+id,group,name,shortName,desc,good,bad,level
+1,Gold,Coin Hunter,CH,Sometimes you look to the ground looking for lost coins. You loose some life because this hurts your neck.,+${BENEFIT}/round,Cost {COST} LP in round 1,1
+2,Gold,Small Farm,SF,An apple farm with few employees and few land. You receive few money for it.,+${BENEFIT}/round,Cost ${COST},3
+3,Gold,Meat Lover,ML,You buy some cows and bulls. In some time you’ll receive a lot of money.,+${BENEFIT}/round,Cost ${COST},5
+4,Gold,Silver Mine,SM,"An expensive silver mine. If you survive, you’ll be rich!",+${BENEFIT}/round,Cost ${COST},7
+18,Defense,Simple Shoes,SS,Our medieval world can hurt your foot every day. Why do not buy these shoes?,+{BENEFIT} armor,Cost ${COST},1
+7,Gold,Hard Belt,HB,A simple belt to fix your pants and and protect you.,+{BENEFIT} armor,Cost ${COST},1
+15,Attack,Rare Gloves,RG,Gloves. Protects your hands in battle.,+{BENEFIT} armor,Cost ${COST},2
+17,Defense,Ugly Pants,UP,"Can you fight without pants? Don’t let your underwear visible, please.",+{BENEFIT} armor,Cost ${COST},3
+24,Defense,Great Shoulders,GS,Don’t leave your shoulders getting air!,+{BENEFIT} armor,Cost ${COST},4
+12,Attack,Special Bracers,SB,This will protect your arms.,+{BENEFIT} armor,Cost ${COST},5
+16,Attack,Super Helmet,SH,A super helmet! Or just a helmet?,+{BENEFIT} armor,Cost ${COST},6
+29,Magic,Human Shield,HS,A shield created by human beings.,+{BENEFIT} armor,Cost ${COST},7
+5,Gold,Leather Armor,LA,A simple armor to protect your weak body.,+{BENEFIT} armor,Cost ${COST},8
+13,Attack,Elfic Cloak,EC,An elfic cloak to protect you.,+{BENEFIT} armor,Cost ${COST},9
+27,Magic,Power Shield,PS,Increases your defense with this magic invisible shield,+{BENEFIT} armor,Cost ${COST},10
+9,Attack,Hidden Axe,HA,A small hidden axe. Weak but cheap,+{BENEFIT} Strength,Cost ${COST},1
+10,Attack,Good Sword,GS,A sword. Very useful in wars.,+{BENEFIT} Strength,Cost ${COST},3
+26,Magic,Icy Rocks,IR,Frozen rocks that strikes your enemy,+{BENEFIT} Strength,Cost ${COST},5
+28,Magic,Holy Thunder,HT,A thunder came from sky and hurts your enemy.,+{BENEFIT} Strength,Cost ${COST},7
+25,Magic,Heaven Fire,HF,"Adds fire damage to your attacks, burning your enemy",+{BENEFIT} Strength,Cost ${COST},9

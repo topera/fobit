@@ -1,0 +1,124 @@
+import com.terahorse.gradle.AWSExec
+
+def group = 'fobit-aws'
+
+task ec2Update(type: AWSExec, group: group) {
+    description 'Run maintenance operations in server'
+    doFirst {
+        runRemote """
+            sudo apt update;
+            sudo apt upgrade -y;
+        """
+    }
+}
+
+task ec2InstallPackages(type: AWSExec, group: group) {
+    description 'Install packages on server'
+    doFirst {
+        runRemote """
+            sudo apt install docker.io -y;
+            sudo apt install nginx -y;
+            sudo apt autoremove -y;            
+        """
+    }
+}
+
+task ec2DockerSetup(type: AWSExec, group: group) {
+    description 'Configure Docker images in EC2 instance'
+    doFirst {
+        runRemote """
+            sudo docker pull terahorse/fobit:0.8.0;
+            sudo docker stop fobit || true;
+        """
+    }
+}
+
+def keyFile = 'main.pem'
+task ec2CopyKey(type: AWSExec, group: group) {
+    description 'Copy secret to server'
+    doFirst {
+        runRemote("rm ~/$keyFile")
+        runScp("~/$keyFile", "~/$keyFile")
+    }
+}
+
+/*
+    Manual steps
+        Plugins
+            Pipeline
+            Pipeline: Stage View
+            Git
+            BitBucket
+            Purge Build History
+            Build Monitor View
+        Credentials in Jenkins (automatically copied to environment variables)
+            DOCKER_PASSWORD
+        # of executors
+            1
+ */
+task jenkinsInstall(type: AWSExec, group: group) {
+    description 'Install Jenkins'
+    doFirst {
+        runRemote """
+            sudo docker rm jenkins -f || true;
+            sudo docker rmi terahorse/jenkins || true;
+            mkdir ~/jenkins -p;
+            sudo docker pull jenkins/jenkins:2.130-slim;
+            sudo docker run --privileged=true -d --memory=1024m --name jenkins -v ~/jenkins:/var/jenkins_home -p 8080:8080 terahorse/jenkins;
+            sudo docker cp $keyFile jenkins:/home/$keyFile
+        """
+    }
+}
+
+task nginxConfig(type: AWSExec, group: group) {
+    def configFile = '/etc/nginx/sites-available/default'
+    description 'Restart Nginx Reverse Proxy'
+    doFirst {
+        runRemote """
+            sudo nginx -s stop || true;
+            sudo chown ubuntu $configFile || true;
+        """
+        runScp('nginx.conf', configFile)
+        runRemote """
+            sudo nginx;
+        """
+    }
+}
+
+task fobitUndeploy(type: AWSExec, group: group) {
+    description 'Undeploy Fobit application'
+    doFirst {
+        runRemote """
+            sudo docker stop fobit || true;
+        """
+    }
+}
+
+task fobitDeploy(type: AWSExec, group: group) {
+    description 'Deploy Fobit application'
+    doFirst {
+        runRemote """
+            sudo docker rm fobit -f || true;
+            sudo docker rmi terahorse/fobit || true;
+            sudo docker run -d -p 5000:5000 --memory=1024m --name fobit terahorse/fobit;
+        """
+    }
+}
+
+/*
+    base ec2 image
+        ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180522 (ami-a4dc46db)
+    fobit
+        version 0.8.0 is pulled just to cache some layers of base docker image
+    Manual Steps
+        REQUIRED
+            Add 2GB swap
+        OPTIONAL
+            sudoedit /etc/default/grub
+                GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"
+            sudo update-grub; reboot
+ */
+task ec2All(group: group) {
+    description 'Configure a new EC2 instance'
+}
+ec2All.runFirst ec2Update, ec2InstallPackages, ec2DockerSetup, ec2CopyKey, jenkinsInstall, fobitDeploy, nginxConfig

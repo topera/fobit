@@ -1,0 +1,9 @@
+Task.metaClass.runFirst = { Task... others ->
+    delegate.dependsOn(others)
+    delegate.mustRunAfter(others[0])
+    for (def i = 0; i < others.size() - 1; i++) {
+        def before = others[i]
+        def after = others[i + 1]
+        after.mustRunAfter(before)
+    }
+}

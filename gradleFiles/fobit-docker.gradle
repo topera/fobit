@@ -1,0 +1,66 @@
+import com.terahorse.gradle.SimpleExec
+
+def group = 'fobit-docker'
+def organization = 'terahorse'
+def name = 'fobit'
+def version = appVersion
+
+task stopContainer(type: SimpleExec, group: group) {
+    description 'Stops docker container'
+    doFirst {
+        run "docker stop $name || true"
+    }
+}
+
+task deleteContainer(type: SimpleExec, group: group) {
+    description 'Deletes docker container'
+    doFirst {
+        run "docker rm $name || true"
+    }
+}
+
+task deleteImage(type: SimpleExec, group: group) {
+    description 'Deletes docker image'
+    doFirst {
+        run "docker rmi $organization/$name:$version || true"
+        run "docker rmi $organization/$name:latest || true"
+    }
+}
+
+task createImage(type: SimpleExec, group: group) {
+    description 'Creates a new docker image compiling source code from scratch'
+    doFirst {
+        run "docker build -t $organization/$name:$version ."
+    }
+}
+
+task createLatestImage(type: SimpleExec, group: group) {
+    description 'Publishes the image to DockerHub'
+    doFirst {
+        run "docker tag $organization/$name:$version $organization/$name:latest"
+    }
+}
+
+task startContainer(type: SimpleExec, group: group) {
+    description 'Run a new container from a new image using current source code'
+    doFirst {
+        run "docker run -d -p 5000:5000 --name $name $organization/$name:$version"
+    }
+}
+
+task publishImage(type: SimpleExec, group: group) {
+    description 'Publishes the image to DockerHub'
+    doFirst {
+        run "docker push $organization/$name:$version"
+        run "docker push $organization/$name:latest"
+    }
+}
+
+task dockerLogin(type: SimpleExec, group: group) {
+    description 'Realizes login in DockerHub. It uses the environment variables DOCKER_USER and DOCKER_PASSWORD'
+    doFirst {
+        //run "docker logout"
+        run "docker login -u \$DOCKER_USER -p \$DOCKER_PASSWORD"
+    }
+}
+

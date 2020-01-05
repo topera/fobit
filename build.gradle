@@ -1,0 +1,27 @@
+// tested with gradle 4.8
+plugins {
+    id 'idea' // better IDEA support
+    id 'groovy' // this replaces and improves the 'java' plugin, adding Groovy support, used in tests
+    id 'org.springframework.boot' version '2.0.1.RELEASE' // spring boot
+    id 'org.sonarqube' version "2.6.2" // allows sonarqube usage
+    id 'jacoco' // allows code coverage without usage of IDEA
+    id 'com.gradle.build-scan' version '1.13.4'
+}
+
+repositories {
+    jcenter()
+}
+
+buildScan {
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'; termsOfServiceAgree = 'yes'
+}
+
+apply from: 'gradleFiles/main.gradle'
+apply from: 'gradleFiles/dependencies.gradle'
+
+apply from: 'gradleFiles/fobit-misc.gradle'
+apply from: 'gradleFiles/fobit-docker.gradle'
+apply from: 'gradleFiles/fobit-aws.gradle'
+apply from: 'gradleFiles/fobit-run.gradle'
+
+apply from: 'gradleFiles/sequence.gradle'

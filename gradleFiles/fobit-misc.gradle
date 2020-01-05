@@ -1,0 +1,45 @@
+import com.terahorse.gradle.SimpleExec
+
+def group = 'fobit-misc'
+
+task createVersion(group: group) {
+    description 'Generates file version.txt with current version'
+    doFirst {
+        println "Creating version.txt with $appVersion"
+        println "Creating build.txt with $buildNumber"
+
+        def dir = new File("$buildDir/resources/main")
+        if (!dir.exists()) {
+            dir.mkdirs()
+        }
+
+        def fileVersion = new File("$buildDir/resources/main/version.txt")
+        fileVersion.write(appVersion)
+
+        def fileBuild = new File("$buildDir/resources/main/build.txt")
+        fileBuild.write(buildNumber)
+    }
+}
+
+task sass(type: SimpleExec, group: group) {
+    description 'Compile SASS files'
+    workingDir 'src/main/resources/static/scss'
+    doFirst {
+        run "sass bootstrap-4.1.1/bootstrap.scss ../css/bootstrap-4.1.1/bootstrap.css --style compressed"
+        run "sass main.scss ../css/main.css --style compressed"
+    }
+}
+
+task addTag(type: SimpleExec, group: group) {
+    description 'Create a git tag based on current version'
+    def tagName = "v$version"
+    doFirst {
+        run "git checkout master"
+        run "git pull"
+        run "git merge dev"
+        run "git push"
+        run "git tag $tagName"
+        run "git push origin $tagName"
+        run "git checkout dev"
+    }
+}

@@ -1,0 +1,31 @@
+def springVersion = "2.0.3.RELEASE"
+
+dependencies {
+    // apache commons
+    compile 'org.apache.commons:commons-io:1.3.2'
+    compile 'org.apache.commons:commons-csv:1.5'
+
+    // spring: allow automatic restart
+    // Note: this breaks drools (https://issues.jboss.org/browse/DROOLS-1540)), thats why is used on for dev.
+    if (new File('local.txt').exists()) {
+        runtime "org.springframework.boot:spring-boot-devtools:$springVersion"
+    }
+
+    // spring: to create the Rest server
+    compile "org.springframework.boot:spring-boot-starter-web:$springVersion"
+
+    // spring: usage of thymeleaf template language inside html files
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf:$springVersion"
+
+    // drools: core of game
+    compile "org.drools:drools-compiler:7.7.0.Final"
+
+    // spock: improved junit :)
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+
+    // jacoco: explicit dependency need by jacoco
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.12'
+
+    // spring: allows integration tests of spring
+    testCompile "org.springframework.boot:spring-boot-starter-test:$springVersion"
+}

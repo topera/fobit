@@ -1,0 +1,55 @@
+import com.terahorse.fobit.model.Game
+import com.terahorse.fobit.model.Player
+
+rule "currentLife: min value"
+    dialect "mvel"
+    agenda-group "BATTLE"
+when
+    $p: Player(alive, currentLife < 1)
+then
+    modify($p){
+        currentLife = 0,
+        alive = false
+    }
+end
+
+rule "currentLife: max value"
+    dialect "mvel"
+    agenda-group "BATTLE"
+when
+    $p: Player(currentLife > maxLife)
+then
+    modify($p){
+        currentLife = $p.maxLife
+    }
+end
+
+
+rule "core: attack"
+    dialect "mvel"
+    agenda-group "BATTLE"
+when
+    $g: Game(running)
+    $attacker: Player(alive, attacking, remainingAttacks > 0)
+    $defender: Player(alive, !attacking)
+then
+    modify($defender){
+        currentLife = $defender.currentLife - ( (1 - $defender.armor) * $attacker.strength)
+    }
+    modify($attacker){
+        remainingAttacks = $attacker.remainingAttacks - 1
+    }
+    //System.out.println("final life 2:" + $defender.currentLife)
+end
+
+rule "core: player defeats another"
+    dialect "mvel"
+    agenda-group "BATTLE"
+when
+    $g: Game(running)
+    $p: Player(!alive)
+then
+    modify($g){
+        running = false
+    }
+end

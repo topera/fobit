@@ -1,0 +1,13 @@
+// dev
+runClean.runFirst clean
+runCompile.runFirst sass, assemble
+runTests.runFirst runClean, createVersion, test, jacocoTestReport
+runServer.runFirst runClean, createVersion, sass, bootRun
+
+// ops
+runDeleteImage.runFirst stopContainer, deleteContainer, deleteImage
+runCreateImage.runFirst runDeleteImage, runClean, createVersion, sass, bootJar, createImage, createLatestImage
+runPublishImage.runFirst runCreateImage, dockerLogin, publishImage
+runContainer.runFirst runCreateImage, startContainer
+runDeployFobit.runFirst runPublishImage, fobitDeploy
+runAddTag.runFirst addTag
