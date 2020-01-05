@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.terahorse.fobit.model.PlayerSpec" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-01-05T19:15:49" hostname="g5" time="0.008">
-  <properties/>
-  <testcase name="Test of getters/setters" classname="com.terahorse.fobit.model.PlayerSpec" time="0.005"/>
-  <testcase name="copy player" classname="com.terahorse.fobit.model.PlayerSpec" time="0.002"/>
-  <testcase name="calculate score" classname="com.terahorse.fobit.model.PlayerSpec" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
