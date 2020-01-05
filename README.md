@@ -14,6 +14,21 @@ However, this code can be used as example in many areas:
 * AngularJS: as front-end js technology
 * Springboot: as server-side technology
 
+## Screenshots
+Main screen
+
+![folder-structure](prints/1.png)
+
+Card selection screen
+![folder-structure](prints/2.png)
+
+Card details
+
+![folder-structure](prints/3.png)
+
+Battle screen
+
+![folder-structure](prints/4.png)
 
 ## Intro
 In this game you have 32 yes/no decisions to take. You can think a lot and won the game.
