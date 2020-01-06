@@ -35,7 +35,7 @@ In this game you have 32 yes/no decisions to take. You can think a lot and won t
 
 Or you can try 4 billion times (2^³²) and won the game as well.
 
-Note: this game was abandoned. If you copy and paste something from here, please give us credits ;)
+Note: this game was abandoned. If you copy and paste something from here, please read our licence :)
 
 ## How to play locally compiling source code
 * Install Java 8 or higher
